@@ -13,7 +13,7 @@
 	 _业务逻辑层_（Service层）：Spring的IoC
     	_数据访问层_（DAO层）：Spring的jdbcTemplate
 
--------------------    	
+------------------
 ###HTTP相关知识
 + 服务器发送给浏览器的响应时没有JS，CSS和图片等外部资源的，浏览器在解析响应时才会再次请求这些资源，这里会出现一些静态资源请求不到的问题，SpringMVC是怎么配置的。
 
@@ -21,15 +21,15 @@
 ###Servlet基础知识
   * __什么是ServletContext，和Tomcat等web容器的关系是什么?__
       简单的说,我们在浏览器点击链接和按钮产生的消息不是发送给Servlet的，而是发送给web容器的（在JSP出现之前，web容器也叫Servlet容器），WEB容器接收消息后不知道如何处理，转交给我们编写的Servlet容器，那么web容器时怎么和Servlet交流的呢，于是就出现了Servlet接口，接口是定义一种规范的良好表达形式，只要我们编写的java类符合Servlet规范，那么就能被web容器识别并被容器管理。
-  
-+ __ 什么时Session？Session在实际工程中的应用场景，以及@SessionAttribute注解的局限性__
+
++ __什么是Session？Session在实际工程中的应用场景，以及@SessionAttribute注解的局限性__
 + JSP是面向服务器的，他并不知道浏览器是什么，是我们在写JSP时预设客户端时浏览器，JSP就是一个Servlet
 
 + JSP的中文比爱呢吗乱码有几种情况？各自的解决办法？JSP文件的编码 ，里蓝其的解析编码， GET请求的编码，Post的编码。
 + Servlet是一种接口规范，其中请求和响应是Servlet容器通过向方法的参数赋值HttpServletRequest或者HttpServletResponse传递的。
 ------------------
 ###各大框架基本概念：Spring/Struts/Hibernate是干什么用的？
-+ __ Spring：DI (IOC) / AOP__
++ __Spring：DI (IOC) / AOP__
 
 	Spring对应的关键词是DI（依赖注入）与AOP（面向切面编程），可以认为是一个以DI和AOP为核心Java Web一站式的集成（粘合）框架。
 
@@ -55,18 +55,18 @@
 	
 	ORM是一种以面向对象的方式来进行数据库操作的技术。Web开发中常用的语言，都会有对应的ORM框架。而Hibernate就是Java开发中一种常用ORM框架，另一个现在流行的ORM框架是Mybatis。
 		
-	__为什么需要ORM框架？__
+	__为什么需要ORM框架__
 	
 	简单地理解，通过Java进行数据库访问的正常流程可以分为以下几步：
 	
 	-  准备好SQL语句
- 	-  调用JDBC的API传入SQL语句，设置参数
-   	- 解析JDBC返回的结果
-   	
-   	这个过程实际上非常麻烦，比如：
-       
+		-  调用JDBC的API传入SQL语句，设置参数
+  		- 解析JDBC返回的结果
+  		
+  		这个过程实际上非常麻烦，比如：
+    
 	-  在Java代码中拼接SQL非常麻烦，而且易于出错
- 	- JDBC的代码调用有很多重复性的代码
+		- JDBC的代码调用有很多重复性的代码
 	-  从JDBC返回的结果转换成领域模型的Java对象很繁琐
 
 	而使用ORM框架，则可以让我们用面向对象的方式来操作数据库，比如通过一个简单的函数调用就完成上面整个流程，直接返回映射为Java对象的结果。这个流程中很大一部分工作其实可以交给ORM自动化地帮我们执行。对，类似MVC框架，ORM框架会帮你处理好相关的繁琐事情！
@@ -99,7 +99,7 @@ Spring MVC提供了一个DispacherServlet（可以Spring MVC是以Servlet技术�
 
 	代理是思想，是接口，实现的方法有JDK的动态代理和CGLIB代理，CGLIB代理是继承产生了一个子类，在前后增加特性达到目的。接下来思考为什么不能切static，private，final方法？接下来思考AopContext.currentProxy()是如何实现的？
 
-- __ bean的作用域__
+- __bean的作用域__
 
 	ioc既然是spring的最重要的东西，那bean的作用域自然也不能忽视了。知道有哪几种作用域，看看是如何实现的，使用的场景。最后再自定义作用域测试一下。思考一下为什么controller里面注入HttpServletRequest request，请求并发的时候不会有冲突？你就会发现和AOP脱离不了关系！
 
@@ -135,4 +135,3 @@ Spring MVC提供了一个DispacherServlet（可以Spring MVC是以Servlet技术�
 这里不打算详细说，就简单画个图，只介绍DI和IoC。
 	
 ![](imgs/20180324-155818.png)
-- __
